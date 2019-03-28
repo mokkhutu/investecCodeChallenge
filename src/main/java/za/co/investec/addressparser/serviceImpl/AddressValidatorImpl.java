@@ -21,12 +21,12 @@ public class AddressValidatorImpl implements AddressValidator {
             return false;
 
         }else {
-            if((addressLineDetail.getLine1() != null && addressLineDetail.getLine1().trim().isEmpty()) ||
-                    (addressLineDetail.getLine2() != null && addressLineDetail.getLine2().trim().isEmpty())) {
-                return true;
+            if(addressLineDetail.getLine1().trim().isEmpty() &&
+                    addressLineDetail.getLine2().trim().isEmpty()) {
+                return false;
             }
 
-            return false;
+            return true;
         }
     }
 

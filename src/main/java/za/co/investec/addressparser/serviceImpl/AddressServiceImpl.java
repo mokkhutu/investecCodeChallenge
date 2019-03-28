@@ -53,8 +53,8 @@ public class AddressServiceImpl implements AddressService {
             throw new InvalidAddressException("Province is required for Country code ZA.");
         }
 
-        if (addressValidator.hasAddressLineDetails(address.getAddressLineDetail())) {
-            throw new InvalidAddressException("Address Lines not specified.");
+        if (!addressValidator.hasAddressLineDetails(address.getAddressLineDetail())) {
+            throw new InvalidAddressException("Address Lines not specified atleast one address line must be specified.");
         }
 
         return true;
